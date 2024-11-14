@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="#FAF9F9">
+
+    <!-- 상단 바: 뒤로가기 버튼과 타이틀 -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp">
+
+        <ImageView
+            android:id="@+id/btn_back"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/goback"
+            android:contentDescription="뒤로가기"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:paddingEnd="8dp" />
+
+        <TextView
+            android:id="@+id/titleText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="아이디 / 비밀번호 찾기"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="#333333"
+            android:layout_centerInParent="true" />
+    </RelativeLayout>
+
+    <TabHost
+        android:id="@+id/tabHost"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TabWidget
+                android:id="@android:id/tabs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <FrameLayout
+                android:id="@android:id/tabcontent"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <!-- 아이디 찾기 탭 -->
+                <LinearLayout
+                    android:id="@+id/tabFindId"
+                    android:orientation="vertical"
+                    android:padding="16dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <EditText
+                            android:id="@+id/phoneInput"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="2"
+                            android:minHeight="40dp"
+                            android:hint="휴대전화번호 입력 (-제외)"
+                            android:background="@drawable/edit_text_background"
+                            android:paddingHorizontal="8dp" />
+
+                        <Button
+                            android:id="@+id/sendCodeButton"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:minHeight="40dp"
+                            android:text="인증번호 전송"
+                            android:background="@drawable/rect_background_btn"
+                            app:backgroundTint="@color/purple_500"
+                            android:textColor="@android:color/white"
+                            android:paddingHorizontal="10dp"
+                            android:layout_marginStart="8dp"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="16dp">
+
+                        <EditText
+                            android:id="@+id/verificationCodeInput"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="2"
+                            android:minHeight="40dp"
+                            android:hint="인증번호 입력"
+                            android:background="@drawable/edit_text_background"
+                            android:paddingHorizontal="8dp"/>
+
+                        <Button
+                            android:id="@+id/verifyButton"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:minHeight="40dp"
+                            android:text="확인"
+                            android:background="@drawable/rect_background_btn"
+                            app:backgroundTint="@color/purple_500"
+                            android:textColor="@android:color/white"
+                            android:layout_marginStart="8dp"
+                            android:paddingHorizontal="12dp" />
+                    </LinearLayout>
+
+                    <Button
+                        android:id="@+id/findIdButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:text="아이디 찾기"
+                        android:background="@drawable/rect_background_btn"
+                        android:layout_marginTop="24dp"
+                        app:backgroundTint="@color/purple_500"
+                        android:textColor="@android:color/white" />
+                </LinearLayout>
+
+                <!-- 비밀번호 찾기 탭 -->
+                <LinearLayout
+                    android:id="@+id/tabFindPassword"
+                    android:orientation="vertical"
+                    android:padding="16dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <EditText
+                        android:id="@+id/idInput"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:background="@drawable/edit_text_background"
+                        android:hint="아이디 입력"
+                        android:paddingHorizontal="8dp"
+                        android:paddingVertical="6dp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="16dp">
+
+                        <EditText
+                            android:id="@+id/phoneInputPassword"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="2"
+                            android:minHeight="40dp"
+                            android:hint="휴대전화번호 입력 (-제외)"
+                            android:background="@drawable/edit_text_background"
+                            android:paddingHorizontal="8dp"/>
+
+                        <Button
+                            android:id="@+id/sendCodeButtonPassword"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:minHeight="40dp"
+                            android:text="인증번호 전송"
+                            android:background="@drawable/rect_background_btn"
+                            app:backgroundTint="@color/purple_500"
+                            android:textColor="@android:color/white"
+                            android:paddingHorizontal="10dp"
+                            android:layout_marginStart="8dp"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="16dp">
+
+                        <EditText
+                            android:id="@+id/verificationCodeInputPassword"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="2"
+                            android:minHeight="40dp"
+                            android:hint="인증번호 입력"
+                            android:background="@drawable/edit_text_background"
+                            android:paddingHorizontal="8dp" />
+
+                        <Button
+                            android:id="@+id/verifyButtonPassword"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:minHeight="40dp"
+                            android:text="확인"
+                            android:background="@drawable/rect_background_btn"
+                            app:backgroundTint="@color/purple_500"
+                            android:textColor="@android:color/white"
+                            android:paddingHorizontal="12dp"
+                            android:layout_marginStart="8dp"/>
+                    </LinearLayout>
+
+                    <Button
+                        android:id="@+id/btn_reset"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:text="비밀번호 재설정"
+                        android:layout_marginTop="24dp"
+                        android:background="@drawable/rect_background_btn"
+                        app:backgroundTint="@color/purple_500"
+                        android:textColor="@android:color/white" />
+                </LinearLayout>
+            </FrameLayout>
+        </LinearLayout>
+    </TabHost>
+</LinearLayout>
