@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">CSLogin</string>
+    <string name="find_id_pw"><u>아이디 / 비밀번호 찾기</u></string>
+    <string name="android_client_id">68976515504-mnlehdfnfoq7thdtuohofbiflo63mlre.apps.googleusercontent.com</string>
+    <string name="facebook_app_id">574104795036036</string>
+    <string name="facebook_client_token">74d3cc356cb73e02cb734e7afa737bc4</string>
+    <string name="OAUTH_CLIENT_ID">ZQa5G4SzdqYwieMC1j4s</string>
+    <string name="OAUTH_CLIENT_SECRET">awvOLZZaB4</string>
+    <string name="OAUTH_CLIENT_NAME">네이버 아이디로 로그인</string>
+    <string name="kakao_app_key">5e287fdc679a8338bc7758a4da960821</string>
+    <string name="status_login">이미 로그인되어 있습니다.</string>
+    <string name="success_login">로그인에 성공했습니다.</string>
+    <string name="failed_login">로그인에 실패했습니다.</string>
+    <string name="heartrate">심박수: %d BPM</string>
+    <string name="step_count">걸음수: %d 걸음</string>
+    <string name="noise">소음: dB</string>
+</resources>

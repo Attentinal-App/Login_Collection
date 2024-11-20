@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "68976515504",
+    "firebase_url": "https://cssca-aca30-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "cssca-aca30",
+    "storage_bucket": "cssca-aca30.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:68976515504:android:55ccecf60f37e05d4dde75",
+        "android_client_info": {
+          "package_name": "com.kmou.cslogin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "68976515504-3h3saiqp20198kit495irp8t3eaacup8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.kmou.cslogin",
+            "certificate_hash": "3e370f426af5e16a902573448729fd8149e31e55"
+          }
+        },
+        {
+          "client_id": "68976515504-mnlehdfnfoq7thdtuohofbiflo63mlre.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA53stbGLN00zvFA6z-s8mb80-y1ioEKIw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "68976515504-ivsnjt4r3p1kuf282e4b0dndt00d1ktk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

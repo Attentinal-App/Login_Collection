@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/drawer_layout"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp">
+
+                <!-- 사이드바 열기 아이콘 -->
+                <ImageView
+                    android:id="@+id/btn_open_drawer"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/ic_menu2"
+                    android:contentDescription="Open Drawer"
+                    android:layout_alignParentStart="true" />
+
+                <!-- 저장 아이콘 -->
+                <ImageView
+                    android:id="@+id/submitButton"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/ic_save"
+                    android:contentDescription="Save"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="16dp"
+                    android:layout_centerVertical="true" />
+
+                <!-- 초기화 버튼 (저장 버튼 왼쪽에 배치) -->
+                <ImageView
+                    android:id="@+id/btn_reset"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/ic_reset"
+                    android:contentDescription="Reset"
+                    android:layout_toStartOf="@id/submitButton"
+                    android:layout_marginEnd="16dp"
+                    android:layout_centerVertical="true" />
+
+                <!-- 타이틀 텍스트 -->
+                <TextView
+                    android:id="@+id/titleText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="데이터 수집"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="#333333"
+                    android:layout_centerInParent="true" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"> <!-- 세로 정렬 -->
+
+                <!-- 텍스트 -->
+                <TextView
+                    android:id="@+id/autoDataText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="자동 데이터 전송"
+                    android:textSize="20sp"
+                    android:textColor="#000000"
+                    android:layout_marginEnd="8dp" /> <!-- 스위치와 간격 조정 -->
+
+                <!-- 스위치 -->
+                <Switch
+                    android:id="@+id/autoDataSwitch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="자동 데이터 전송 스위치" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <EditText
+                    android:id="@+id/sleephourInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="수면시간(시) 입력"
+                    android:inputType="number" />
+                <EditText
+                    android:id="@+id/sleepminuteInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="수면시간(분) 입력"
+                    android:inputType="number" />
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/activityInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="활동 입력" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="집중 여부"
+                android:textSize="20sp" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <CheckBox
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/conc1"
+                    android:layout_weight="1"
+                    android:text="예" />
+                <CheckBox
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:id="@+id/conc2"
+                    android:text="아니요" />
+            </LinearLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="낮잠 여부"
+                android:textSize="20sp" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <CheckBox
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/sleep1"
+                    android:layout_weight="1"
+                    android:text="30분 이상" />
+                <CheckBox
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:id="@+id/sleep2"
+                    android:text="30분 이하" />
+                <CheckBox
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:id="@+id/sleep3"
+                    android:text="낮잠 안잠" />
+            </LinearLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="도핑여부"
+                android:textSize="20sp" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <CheckBox
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/drug1"
+                    android:layout_weight="1"
+                    android:text="예" />
+                <CheckBox
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:id="@+id/drug2"
+                    android:text="아니요" />
+            </LinearLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="전자기기 여부"
+                android:textSize="20sp" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <CheckBox
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/machine1"
+                    android:layout_weight="1"
+                    android:text="예" />
+                <CheckBox
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:id="@+id/machine2"
+                    android:text="아니요" />
+            </LinearLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="음악 여부"
+                android:textSize="20sp" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <CheckBox
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/music1"
+                    android:layout_weight="1"
+                    android:text="예" />
+                <CheckBox
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:id="@+id/music2"
+                    android:text="아니요" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/averageLightTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="평균 조도: -- lux"
+                android:textSize="20dp"
+                android:textColor="#ff0000"
+                android:layout_marginTop="20dp" />
+
+            <TextView
+                android:id="@+id/averageNoiseTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="평균 소음: -- dB"
+                android:textSize="20dp"
+                android:textColor="#ff0000"
+                android:layout_marginTop="10dp" />
+
+            <!-- 심박수 데이터 표시 -->
+            <TextView
+                android:id="@+id/heartRateTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/heartrate"
+                android:textSize="18sp"
+                android:textColor="#000000"
+                android:layout_marginTop="20dp" />
+
+            <!-- 걸음수 데이터 표시 -->
+            <TextView
+                android:id="@+id/stepCountTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/step_count"
+                android:textSize="18sp"
+                android:textColor="#000000"
+                android:layout_marginTop="10dp" />
+        </LinearLayout>
+    </ScrollView>
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="280dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:fitsSystemWindows="true"
+        android:background="@android:color/white"
+        app:menu="@menu/navigation_menu"
+        app:headerLayout="@layout/nav_header" />
+</androidx.drawerlayout.widget.DrawerLayout>

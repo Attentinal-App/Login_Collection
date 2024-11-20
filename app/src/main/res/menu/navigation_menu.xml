@@ -1,0 +1,22 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_dashboard"
+        android:background="?attr/selectableItemBackground"
+        android:title="대시보드"/>
+    <item
+        android:id="@+id/nav_data_collection"
+        android:background="?attr/selectableItemBackground"
+        android:title="데이터 수집" />
+    <item
+        android:id="@+id/nav_profile"
+        android:background="?attr/selectableItemBackground"
+        android:title="프로필" />
+    <item
+        android:id="@+id/nav_settings"
+        android:background="?attr/selectableItemBackground"
+        android:title="설정" />
+    <item
+        android:id="@+id/nav_logout"
+        android:background="?attr/selectableItemBackground"
+        android:title="로그아웃" />
+</menu>
