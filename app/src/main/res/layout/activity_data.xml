@@ -27,7 +27,7 @@
                     android:id="@+id/btn_open_drawer"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
-                    android:src="@drawable/ic_menu2"
+                    android:src="@drawable/ic_menu"
                     android:contentDescription="Open Drawer"
                     android:layout_alignParentStart="true" />
 

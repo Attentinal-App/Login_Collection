@@ -2,7 +2,7 @@
     <string name="app_name">CSLogin</string>
     <string name="find_id_pw"><u>아이디 / 비밀번호 찾기</u></string>
     <string name="android_client_id">android_client_id</string>
-    <string name="kakao_app_key">kakao_app_key</string>
+    <string name="kakao_app_key">${KAKAO_APP_KEY}</string>
     <string name="status_login">이미 로그인되어 있습니다.</string>
     <string name="success_login">로그인에 성공했습니다.</string>
     <string name="failed_login">로그인에 실패했습니다.</string>

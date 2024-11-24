@@ -148,16 +148,4 @@
             android:contentDescription="Facebook 로그인"
             android:scaleType="fitCenter" />
     </LinearLayout>
-
-
-    <Button
-        android:id="@+id/btn_guest"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:text="게스트 로그인"
-        app:backgroundTint="@color/purple_500"
-        android:background="@drawable/rect_background_btn"
-        android:textColor="@android:color/white"
-        android:layout_marginBottom="10dp" />
-
 </LinearLayout>

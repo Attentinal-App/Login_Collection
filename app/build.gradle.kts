@@ -15,9 +15,8 @@ if (localPropertiesFile.exists()) {
 }
 
 // API 키 로드
-val androidClientId: String? = localProperties.getProperty("ANDROID_CLIENT_ID")
-val kakaoAppKey: String? = localProperties.getProperty("KAKAO_APP_KEY")
-val apiKey: String? = localProperties.getProperty("API_KEY")
+val androidClientId: String? = localProperties.getProperty("android_client_id")
+val kakaoAppKey: String? = localProperties.getProperty("kakao_app_key")
 
 android {
     namespace = "com.kmou.cslogin"
@@ -38,7 +37,6 @@ android {
         // BuildConfig에 API 키 추가
         buildConfigField("String", "ANDROID_CLIENT_ID", "\"$androidClientId\"")
         buildConfigField("String", "KAKAO_APP_KEY", "\"$kakaoAppKey\"")
-        buildConfigField("String", "API_KEY", "\"$apiKey\"")
 
         // strings.xml에서 사용할 수 있도록 추가
         resValue("string", "android_client_id", androidClientId ?: "")
@@ -53,9 +51,6 @@ android {
                 "proguard-rules.pro"
             )
         }
-        debug {
-            isMinifyEnabled = false
-        }
     }
 
     compileOptions {
@@ -68,6 +63,7 @@ android {
 
     buildFeatures {
         resValues = true // Gradle 변수로 strings.xml 값을 설정 가능하게 함
+        buildConfig = true
     }
 }
 
