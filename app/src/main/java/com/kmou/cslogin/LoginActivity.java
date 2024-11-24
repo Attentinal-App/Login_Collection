@@ -8,28 +8,26 @@ import android.widget.ImageView;
 import android.widget.Toast;
 import android.widget.TextView;
 import android.widget.CheckBox;
-import androidx.appcompat.app.AppCompatActivity;
 import android.util.Log;
+
 import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.common.api.ApiException;
-import com.google.firebase.auth.AuthCredential;
-import com.google.firebase.auth.GoogleAuthProvider;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.tasks.Task;
 
-import com.google.firebase.auth.FacebookAuthProvider;
+import com.google.firebase.auth.AuthCredential;
+import com.google.firebase.auth.GoogleAuthProvider;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import com.kakao.sdk.common.KakaoSdk;
 import com.kakao.sdk.user.UserApiClient;
-
-import java.util.Arrays;
 
 public class LoginActivity extends AppCompatActivity {
     private FirebaseAuth firebaseAuth;
@@ -101,10 +99,6 @@ public class LoginActivity extends AppCompatActivity {
         // Kakao SDK 초기화
         String nativeAppKey = getString(R.string.kakao_app_key);
         KakaoSdk.init(this, nativeAppKey);
-
-        // 게스트 로그인 버튼 설정
-        Button guestLoginButton = findViewById(R.id.btn_guest);
-        guestLoginButton.setOnClickListener(v -> signInAnonymously());
 
         // Google 로그인 버튼 클릭 처리
         ImageView googleLoginButton = findViewById(R.id.btn_google);
@@ -194,53 +188,6 @@ public class LoginActivity extends AppCompatActivity {
                 Toast.makeText(this, "Google 로그인 실패: " + e.getMessage(), Toast.LENGTH_SHORT).show();
             }
         }
-    }
-
-    // 게스트 로그인 메서드
-    private void signInAnonymously() {
-        // 이전에 저장된 UID가 있는지 확인
-        String savedUid = sharedPreferences.getString("guestUid", null);
-
-        if (savedUid != null) {
-            // 이전에 저장된 UID로 로그인 시도
-            firebaseAuth.signInWithCustomToken(savedUid).addOnCompleteListener(task -> {
-                if (task.isSuccessful()) {
-                    FirebaseUser user = firebaseAuth.getCurrentUser();
-                    if (user != null) {
-                        saveLoginType("Guest");
-                        saveUserInfoToPreferences(user);
-                        navigateToActivity(user, "Guest");
-                    }
-                } else {
-                    // 기존 UID로 로그인 실패 시 새로운 익명 계정 생성
-                    createNewAnonymousUser();
-                }
-            });
-        } else {
-            // 저장된 UID가 없을 경우 새로운 익명 계정 생성
-            createNewAnonymousUser();
-        }
-    }
-
-    // 새로운 익명 사용자 생성 메서드
-    private void createNewAnonymousUser() {
-        firebaseAuth.signInAnonymously().addOnCompleteListener(task -> {
-            if (task.isSuccessful()) {
-                FirebaseUser user = firebaseAuth.getCurrentUser();
-                if (user != null) {
-                    // UID 저장
-                    SharedPreferences.Editor editor = sharedPreferences.edit();
-                    editor.putString("guestUid", user.getUid());
-                    editor.apply();
-
-                    saveLoginType("Guest");
-                    saveUserInfoToPreferences(user);
-                    navigateToActivity(user, "Guest");
-                }
-            } else {
-                Toast.makeText(this, "게스트 로그인 실패", Toast.LENGTH_SHORT).show();
-            }
-        });
     }
 
 

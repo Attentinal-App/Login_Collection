@@ -43,13 +43,13 @@ class DataCollector(
     private var isRecording = false
     private var audioRecord: AudioRecord? = null
     private var bufferSize = 0
-    private lateinit var sensorManager: SensorManager
+    private var sensorManager: SensorManager
     private var lightSensor: Sensor? = null
 
-    val noiseDataList = ArrayList<Double>()
-    val lightDataList = ArrayList<Double>()
-    var avgNoiseLevel = 0.0f
-    var avgLightLevel = 0.0f
+    private val noiseDataList = ArrayList<Double>()
+    private val lightDataList = ArrayList<Double>()
+    private var avgNoiseLevel = 0.0f
+    private var avgLightLevel = 0.0f
 
     fun getAverageNoiseLevel() = avgNoiseLevel.toFloat()
     fun getAverageLightLevel() = avgLightLevel.toFloat()
