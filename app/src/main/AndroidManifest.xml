@@ -117,6 +117,12 @@
         <activity
             android:name=".FirebaseHelper"
             android:exported="true" />
+        <activity
+            android:name=".ProfileActivity"
+            android:exported="true" />
+        <activity
+            android:name=".AnalysisActivity"
+            android:exported="true" />
 
         <!-- Google OAuth 클라이언트 ID 설정 -->
         <meta-data
