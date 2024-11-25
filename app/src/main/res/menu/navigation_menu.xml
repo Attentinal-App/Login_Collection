@@ -8,9 +8,9 @@
         android:background="?attr/selectableItemBackground"
         android:title="데이터 수집" />
     <item
-        android:id="@+id/nav_profile"
+        android:id="@+id/nav_analysis"
         android:background="?attr/selectableItemBackground"
-        android:title="프로필" />
+        android:title="통계" />
     <item
         android:id="@+id/nav_settings"
         android:background="?attr/selectableItemBackground"

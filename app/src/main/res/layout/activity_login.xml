@@ -48,7 +48,7 @@
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:text="로그인"
-        android:background="@drawable/rect_background_btn"
+        android:background="@drawable/btn_background"
         app:backgroundTint="@color/purple_500"
         android:textColor="@android:color/white"
         android:layout_marginBottom="20dp" />

@@ -9,5 +9,5 @@
         android:color="#6200EE" /> <!-- 보라색 테두리 -->
 
     <!-- 사각형 모양 설정 (radius는 0으로) -->
-    <corners android:radius="0dp" />
+    <corners android:radius="4dp" />
 </shape>

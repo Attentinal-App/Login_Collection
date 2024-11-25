@@ -72,10 +72,14 @@ public class BaseActivity extends AppCompatActivity {
                 startActivity(new Intent(BaseActivity.this, MainActivity.class));
             } else if (id == R.id.nav_data_collection) {
                 navigateToDataActivity();
-            } else if (id == R.id.nav_profile) {
+            } else if (id == R.id.profileImageView) {
                 Toast.makeText(BaseActivity.this, "프로필 클릭", Toast.LENGTH_SHORT).show();
             } else if (id == R.id.nav_settings) {
                 Toast.makeText(BaseActivity.this, "설정 클릭", Toast.LENGTH_SHORT).show();
+            } else if (id == R.id.nav_analysis) {
+                Toast.makeText(BaseActivity.this, "통계 클릭", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(BaseActivity.this, AnalysisActivity.class);
+                startActivity(intent);
             } else if (id == R.id.nav_logout) {
                 firebaseAuth.signOut();
                 Toast.makeText(BaseActivity.this, "로그아웃 되었습니다.", Toast.LENGTH_SHORT).show();
@@ -102,6 +106,7 @@ public class BaseActivity extends AppCompatActivity {
         View headerView = navigationView.getHeaderView(0);
         TextView userNameTextView = headerView.findViewById(R.id.userNameTextView);
         TextView userEmailTextView = headerView.findViewById(R.id.userEmailTextView);
+        ImageView profileImageView = headerView.findViewById(R.id.profileImageView);
 
         // 로그인 유형에 따라 사용자명 또는 UID 출력
         if ("Guest".equals(loginType)) {
@@ -110,9 +115,16 @@ public class BaseActivity extends AppCompatActivity {
             userNameTextView.setText(name); // 일반 로그인 시 사용자명 출력
         }
         userEmailTextView.setText(email);
+
+        // 프로필 이미지 클릭 리스너 추가
+        profileImageView.setOnClickListener(v -> {
+            Intent intent = new Intent(BaseActivity.this, ProfileActivity.class);
+            intent.putExtra("uid", uid);
+            intent.putExtra("name", name);
+            intent.putExtra("email", email);
+            startActivity(intent);
+        });
     }
-
-
 
     // DataActivity로 이동하는 메서드
     private void navigateToDataActivity() {

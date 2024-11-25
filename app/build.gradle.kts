@@ -97,6 +97,9 @@ dependencies {
     // Kakao SDK
     implementation("com.kakao.sdk:v2-all:2.20.6") // Kakao 전체 모듈 설치
 
+    // 시각화 SDK
+    implementation("com.github.PhilJay:MPAndroidChart:v3.1.0")
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)

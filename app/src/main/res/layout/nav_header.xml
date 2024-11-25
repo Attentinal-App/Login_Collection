@@ -5,6 +5,17 @@
     android:layout_height="wrap_content"
     android:background="@android:color/holo_blue_light">
 
+    <ImageView
+        android:id="@+id/profileImageView"
+        android:layout_width="72dp"
+        android:layout_height="72dp"
+        android:src="@drawable/ic_default_profile"
+        android:background="@drawable/rounded"
+        android:clipToOutline="true"
+        android:contentDescription="프로필 이미지"
+        android:layout_marginBottom="8dp" />
+
+
     <TextView
         android:id="@+id/userNameTextView"
         android:layout_width="wrap_content"
